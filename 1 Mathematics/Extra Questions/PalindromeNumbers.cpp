@@ -3,19 +3,11 @@ using namespace std;
 
 string Solution() {
     int n; cin>>n;
-    int x = n, rev = 0, p = 0, mod;
+    int x = n, rev = 0, mod;
 
-    while (x > 0) {
-        x = x / 10;
-        p++;
-    }
-
-    x = n;
-    p--;
     while (x > 0) {
         mod = x % 10;
-        rev += mod * pow(10, p);
-        p--;
+        rev = rev * 10 + mod;
         x /= 10;
     }
 
